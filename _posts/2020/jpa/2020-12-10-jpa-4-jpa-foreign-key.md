@@ -1,5 +1,16 @@
 ---
 title: JPA를 알아보자-(4) JPA Foreign Key, 관계
+layout: single
+author_profile: true
+read_time: true
+comments: true
+share: true
+related: true
+categories:
+- JPA
+toc: true
+toc_sticky: true
+toc_label: 목차
 ---
 
 # 관계(Relationship) 설정하기

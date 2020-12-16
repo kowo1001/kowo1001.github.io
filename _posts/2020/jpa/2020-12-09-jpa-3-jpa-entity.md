@@ -1,5 +1,16 @@
 ---
 title: JPA를 알아보자-(3) JPA로 Entity 생성
+layout: single
+author_profile: true
+read_time: true
+comments: true
+share: true
+related: true
+categories:
+- JPA
+toc: true
+toc_sticky: true
+toc_label: 목차
 ---
 
 # JPA table 생성

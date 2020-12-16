@@ -1,5 +1,16 @@
 ---
 title: JPA MiniProject
+layout: single
+author_profile: true
+read_time: true
+comments: true
+share: true
+related: true
+categories:
+- PROJECT
+toc: true
+toc_sticky: true
+toc_label: 목차
 ---
 
 # JPA MiniProject
