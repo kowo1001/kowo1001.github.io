@@ -1,21 +1,10 @@
 ---
 title: Servlet을 알아보자-(3) ServletContext
-layout: single
-author_profile: true
-read_time: true
-comments: true
-share: true
-related: true
-categories:
-- Servlet&JSP
-toc: true
-toc_sticky: true
-toc_label: 목차
 ---
 
 ## ServletContext란?
 ServletContext는 톰캣 컨테이너(서버) 실행시 각 Context(Web Application)마다 한개의 ServletContext 객체를 생성한다.
-그리고 톰캣 컨테이너(서버)가 종료하면 ServletContext 객체도 소멸된다
+그리고 톰캣 컨테이너(서버)가 종료되면 ServletContext 객체도 소멸된다
 ServletContext객체는 Web Application 내에 있는 모든 서블릿들을 관리하며 공통 자원이나 정보를 공유할 수 있게 도와주는 역할을 한다
 
 ## ServletContext 특징
