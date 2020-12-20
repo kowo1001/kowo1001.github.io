@@ -1,5 +1,16 @@
 ---
-title: Servlet을 알아보자-(3) ServletContext
+title: Servlet-(3) ServletContext
+layout: single
+author_profile: true
+read_time: true
+comments: true
+share: true
+related: true
+categories:
+- Servlet&JSP
+toc: true
+toc_sticky: true
+toc_label: 목차
 ---
 
 ## ServletContext란?
