@@ -1,5 +1,5 @@
 ---
-title: 프로그래머스문제풀이_네트워크
+title: [Programmers] 네트워크
 layout: single
 author_profile: true
 read_time: true
