@@ -6,8 +6,7 @@ read_time: true
 comments: true
 share: true
 related: true
-categories:
-- JAVA
+categories: JAVA
 toc: true
 toc_sticky: true
 toc_label: 목차
