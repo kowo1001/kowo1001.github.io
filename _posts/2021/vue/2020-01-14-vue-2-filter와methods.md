@@ -1,5 +1,5 @@
 ---
-title: JSP-(5) Javer Server Page
+title: Vue-(2) Javer Server Page
 layout: single
 author_profile: true
 read_time: true
