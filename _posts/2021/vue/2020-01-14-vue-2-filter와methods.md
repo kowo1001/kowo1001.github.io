@@ -1,5 +1,5 @@
 ---
-title: Vue-(2) Javer Server Page
+title: Vue-(2) vue methods,Json,filter
 layout: single
 author_profile: true
 read_time: true
