@@ -1,5 +1,5 @@
 ---
-title: Vue-(3) axios(심화)
+title: Vue-(4) vue와 axios
 layout: single
 author_profile: true
 read_time: true
@@ -21,8 +21,8 @@ toc_label: 목차
 
 |API유형|처리결과|
 |:-------------------------:|:-------------------------------:|
-|axios.get('URL주소').then().catch()|해당 URL로 get방식으로 요청,then()안에 반환값 로직 작성,catch()안에는 오류발생시 로직 작성|
-|axios.post('URL주소').then().catch()|해당 URL로 POST방식으로 요청,then()안에 반환값 로직 작성,catch()안에는 오류발생시 로직 작성|
+|axios.get('URL주소').then().catch()|해당 URL로 get방식으로 요청<br>then()안에 반환값 로직 작성<br>catch()안에는 오류발생시 로직 작성|
+|axios.post('URL주소').then().catch()|해당 URL로 POST방식으로 요청<br>then()안에 반환값 로직 작성<br>catch()안에는 오류발생시 로직 작성|
 |axios({옵션})| HTTP요청에 대한 자세한 속성들을 직접 정의하여 보낼 수 있음|
 
 

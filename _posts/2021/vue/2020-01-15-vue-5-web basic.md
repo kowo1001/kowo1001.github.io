@@ -1,5 +1,5 @@
 ---
-title: Vue-(2) Web Basic
+title: Vue-(5) Web Basic
 layout: single
 author_profile: true
 read_time: true
