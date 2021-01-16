@@ -61,7 +61,12 @@ axios.get('/api/data')
 ```
 axios 요청 시 파라미터 정보(/api/todos/1)를 입력하여 정보를 얻어 올 수 있다. 위의 것이 리스트를 불러온다면 지금 아래의 요청은 하나의 상세정보를 불러온다.
 ```javascript
-axios.get('/api/data/1') .then(res => { console.log(`status code: ${res.status}`); console.log(`headers: ${res.headers}`) console.log(`data: ${res.data}`) })
+axios.get('/api/data/1') 
+	.then(res => { 
+		console.log(`status code: ${res.status}`); 
+		console.log(`headers: ${res.headers}`) 
+		console.log(`data: ${res.data}`)
+	})
 ```
 axios 요청 시 파라미터 정보가 아니라 메소드의 두 번째 인자인 config 객체로 요청값을 넘길 수 있다.
 
