@@ -135,7 +135,8 @@ axios.post('/api/data/' + this.no + '/photo', data)
 });
 ```
 
-
+# VSCODE에 있었던 코드 (FrontEnd)
+## step11_ajaxCORS.html
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -242,7 +243,7 @@ axios.post('/api/data/' + this.no + '/photo', data)
 
 ```
 
-자바 이클립스에 있었던 코드 
+# 자바 이클립스에 있었던 코드 (BackEnd)
 ## index.jsp
 ```jsp
 <%@page import="model.EmployeesDAO"%>
@@ -252,7 +253,64 @@ axios.post('/api/data/' + this.no + '/photo', data)
 
 ${requestScope.employeesAll.allEmployees}
 ```
+<% response.setHeader("Access-Control-Allow-Origin", "*"); %>를 주석처리하면 다음과 같은 에러가 뜬다
+![CORS위반](https://user-images.githubusercontent.com/37354978/104806749-1d12cf80-581d-11eb-8629-9099e8787730.PNG)
 
+### SOP(Same Origin Policy)란?
+한 origin으로부터 로드된 document 또는 script가 다른 origin의 리소스와 
+상호작용할 수 있는 방법을 제한하는 중요한 보안 메커니즘.
+-document가 외부리소스들과 상호작용 할 때 리소스의 origin이 document의 origin과 다른 경우에
+뭔가 제한을 두겠다는게 Same Origin Policy이다.
+-document가 외부리소스들과 상호작용 할 때 SOP가 적용된다고 했는데
+어떤 상호작용들을 할때 SOP가 적용될까 
+03:11 참고 (https://coding-groot.tistory.com/91)
+
+### Origin이 무엇인지?
+브라우저가 origin을 따질때, 딱 세가지인 Scheme, Host, Port 섹지만 보고선 origin을 판단한다
+![Origin](https://user-images.githubusercontent.com/37354978/104808141-96172480-5827-11eb-89f9-00e0c3f4d3e2.jpg)
+아래 그림에서 첫번째 , 두번째만이 Same-Origin임을 알 수 있다.
+![12번이 origin](https://user-images.githubusercontent.com/37354978/104808152-a8915e00-5827-11eb-9ade-100a3278260e.PNG)
+
+### SOP가 왜 중요한지?
+SOP가 없으면 어떤 상황들이 발생할 수 있는지 - XMLHttpRequest에서 CSRF 공격을 당할 수 있다.
+09:30 참고 (https://coding-groot.tistory.com/91)
+
+### Cross-origin script API
+Cross-origin network access
+Cross-origin간의 통신이 필요할 경우
+- Same-Origin : 상호간의 document에 자유롭게 접근 가능
+- Cross-Origin : 상호간의 document 접근 불가, 매우 제한적인 객체에만 접근 가능
+
+#### 에러 내용
+![XMLHttpRequest CORS위반](https://user-images.githubusercontent.com/37354978/104808130-83045480-5827-11eb-87c2-79216448fa97.PNG)
+XMLHttpRequest 리퀘스트 http://localhost/step11_BackLogic/Controller?command=getAll 쪽으로의 요청에 접근할 수 없다
+이 요청은 http://127.0.0.1:5500 으로부터 왔는데, CORS 정책에 의해서 막혔어
+'Access-Control-Allow-Origin 헤더가 존재하지 않으니까
+"나는 SOP의 기본 정책에 따라서 네가 이걸 읽는 것을 허가하지 않을거야" 라는 의미이다
+
+### CORS 정책이란
+지금 같은 상황에서 cross-origin 간에 API를 요청하고 읽어드릴 필요가 있을 때가 있다
+그럴 때에는 'Access-Control_Allow-Origin' 헤더에 이 데이터를 읽을 수 있는 origin을
+따로 넣어줘야 한다.
+
+예를 들어서, http://localhost/step11_BackLogic/Controller?command=getAll에서 데이터를 리턴해줄 때
+'Access-Control-Allow-Origin' 헤더에 이 http://127.0.0.1:5500/step11_ajaxCORS.html 이라는 거를 넣어놓는다
+그러면 읽을 때, origin은 다르지만 허용 origin 목록에 있네 ? 하고서 데이터를 읽을 수 있게 된다.
+이게 CORS 정책이다.
+
+### Cross-Origin이 필요한 경우
+#### CORS 방식 사용
+- 사용가능
+- 반드시 허용할 origin만을 Access-Control-Allow-Origin에 추가
+- 서버에서 리스폰스(response)를 줄 때, 리스폰스 헤더에 허용할 origin 만을 
+Access-Control-Allow-Origin에 추가해주면 cross-origin인 경우에도 데이터를 읽을 수 있다.
+- 주의할 점 : origin을 모든 origin 대상으로 열어놓는 경우들은 공격을 당할 수 있다 
+
+#### JSONP 방식 사용
+- 사용하지 않는 것을 추천
+- JSONP를 이용해서 cross-origin간의 네트워크 엑세스를 할 수 있다.
+- 그러나, 해당 API는 모든 origin 대상으로 SOP 정책을 다 열어 놓는다. 
+- 만약에, JSONP 리스폰스(response)에 민감한 정보가 포함되어 있는 경우가 있다면 공격을 당할 수 있다.
 
 ## Controller.java
 ```java
@@ -322,7 +380,7 @@ public class Controller extends HttpServlet {
 }
 
 ```
-EmployeesDAO.java
+## EmployeesDAO.java
 ```java
 package model;
 
@@ -383,7 +441,7 @@ public class EmployeesDAO {
 }	
 
 ```
-Employees.java
+## Employees.java
 ```java
 package model.dto;
 
@@ -415,7 +473,7 @@ public class Employees {
 }
 
 ```
-DBUtil.java
+## DBUtil.java
 ```java
 package model.util;
 
