@@ -25,6 +25,112 @@ toc_label: 목차
 |axios.post('URL주소').then().catch()|해당 URL로 POST방식으로 요청,then()안에 반환값 로직 작성,catch()안에는 오류발생시 로직 작성|
 |axios({옵션})| HTTP요청에 대한 자세한 속성들을 직접 정의하여 보낼 수 있음|
 
+
+웹 또는 앱을 개발하다 보면 거의 대부분이 서버가 필요하게 된다. <br>
+서버에 내용을 저장하고 웹이나 앱에서 서버의 저장된 내용을 불러다가 사용자에게 보여주게 된다. 이때 javascript에는 axios라는 아주 훌륭한 플러그인이 있습니다.
+axios는 javascript용 플러그인으로 많이 사용하지만 Vue.js에서도 매우 요긴하게 사용되어진다.
+
+axios는 Promise 기반의 자바스크립트 비동기 처리방식을 사용한다.<br>
+그래서 요청후 .then()으로 결과값을 받아서 처리를 하는 형식으로 구성되어 있습니다.
+
+```javascript
+axios.get('/api/data').then(res => { console.log(res.data) })
+```
+/api/data에서 데이터를 불러온다. <br>
+불러온 데이터는 .then()의 res에 담아서 처리하는 식이다. <br>
+여기서는 간단하게 크롬브라우저의 Console화면에 결과값을 보여주게 처리되어 있다. <br>
+
+### axios 별칭으로 사용하기
+axios는 REST을 별칭을 이용해서 쉽게 통신을 할 수 있다.
+- 불러오기 : axios.get(url,)
+- 입력하기 : axios.post(url,)
+- 수정하기 : axios.patch(url,)
+- 삭제하기 : axios.delete(url,)
+
+### GET (불러오기)
+GET은 서버로 부터 데이터를 가져오는데 사용한다.
+아마도 가장많이 사용하는 명령어 일 것이다.
+서버 주소인 /api/data로 부터 값을 불러올 때 사용한다.
+
+```javascript
+axios.get('/api/data') 
+	.then(res => {
+	// 불러온 값을 Console에 뿌려줍니다. 
+	console.log(res.data) 
+	})
+```
+axios 요청 시 파라미터 정보(/api/todos/1)를 입력하여 정보를 얻어 올 수 있다. 위의 것이 리스트를 불러온다면 지금 아래의 요청은 하나의 상세정보를 불러온다.
+```javascript
+axios.get('/api/data/1') .then(res => { console.log(`status code: ${res.status}`); console.log(`headers: ${res.headers}`) console.log(`data: ${res.data}`) })
+```
+axios 요청 시 파라미터 정보가 아니라 메소드의 두 번째 인자인 config 객체로 요청값을 넘길 수 있다.
+
+```javascript
+axios.get('/api/data', {
+	params: { title: 'vue.js는 조으다.' },
+	headers: { 'X-Api-Key': 'my-api-key' },
+	timeout: 1000 //1초 이내에 응답이 없으면 에러 처리
+}).then(res => {
+	console.log(res.data)
+})
+```
+## POST (값 입력하기)
+/api/data에 값을 입력 할 때 사용한다.
+서버의 데이터 리스트의 마지막에 지금 넘기는 정보를 추가한다
+```javascript
+axios.post('/api/data', {title: "vue.js는 조으다."}) 
+	.then(res => { 
+		console.log(res.data) 
+	})
+```
+## PATCH (특정 값 수정하기)
+/api/data/3에 값을 입력 할 때 사용합니다.
+서버의 데이터 리스트 중 3에 해당 하는 값의 title를 수정합니다.
+```javascript
+axios.patch('/api/data/3', {title: "vue.js는 조으다."})
+ .then(res => {
+	console.log(res.data)
+ })
+```
+## DELETE (특정 값 삭제하기)
+/api/data/3에 값을 삭제 할 때 사용합니다.
+서버의 데이터 리스트 중 3에 해당 하는 값을 삭제 합니다.
+```javascript
+axios.delete('/api/data/3') 
+	.then(res => { 
+		console.log(res.data)
+	})
+```
+## ELSE) axios로 파일 업로드하기
+axios로 파일도 업로드 할 수 있다. <br>
+먼저 HTML로 아래와 같이 form문을 작성한다.
+
+### HTML 코드
+여기에서 ref="photoimage"는 중요한 역할을 하니 빼먹으면 안된다.
+```html
+<form method="post" enctype="multipart/form-data" action="/contant/124/photo">
+	<input type="file" name="photo" ref="photoimage"> 
+	<input type="submit"> 
+</form>
+```
+### JAVASCRIPT 코드
+FormData() 객체를 생성하고 this.$refs.photoimage과 같이 
+ref옵션을 이용해서 필드에 직접 참조를 하여 
+이미지파일을 가져오고 업로드를 할 수 있습니다.
+```javascript
+var data = new FormData(); 
+var file = this.$refs.photoimage.files[0]; 
+data.append('photo', file); 
+axios.post('/api/data/' + this.no + '/photo', data) 
+.then((res) => { 
+	this.result = res.data; 
+}) 
+.catch((ex) => { 
+	console.log('사진업로드 실패', ex);
+});
+```
+
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +147,7 @@ toc_label: 목차
         <select name="standard" v-model="info">
             <option v-for="(value, key) in model[0]" :value="key">{{key}}</option>
         </select>
-        <template v-if="standard">
+        <template v-if="standard"> <!-- standard 라는 값이 있으면 실행 -->
             <select v-model="check">
                 <option v-for="value in set[standard]" :value="value">{{value}}</option>
             </select>
@@ -80,15 +186,16 @@ toc_label: 목차
         });
 
         function printEmployee() {
-            axios.get("http://localhost/step11_BackLogic/Controller?command=getAll", {
-            }).then(resData => {
+            axios.get("http://localhost/step11_BackLogic/Controller?command=getAll", { 
+				//http://localhost/step11_BackLogic/Controller?command=getAll이라는 url을 입력하여 정보를 얻어올 수 있다
+            }).then(resData => { 
                 vm.$data.model = resData.data;
 
                 let modelSet = {};
-                for (let value of resData.data) {
-                    for (let key in value) {
-                        if (key in modelSet) {
-                            modelSet[key].add(value[key]);
+                for (let value of resData.data) { // for( 데이터값 of 모든 데이터)
+                    for (let key in value) { // for(데이터 키값 in 데이터값)
+                        if (key in modelSet) { // modelSet에 넣고 key 중복 제거
+                            modelSet[key].add(value[key]); 
                         } else {
                             modelSet[key] = new Set([value[key]]);
                         }
@@ -372,4 +479,6 @@ public class DBUtil {
 }
 
 ```
+참고자료 
+- Vue.js에서 axios를 사용하여 서버통신하는 방법(https://uxgjs.tistory.com/138)
 
