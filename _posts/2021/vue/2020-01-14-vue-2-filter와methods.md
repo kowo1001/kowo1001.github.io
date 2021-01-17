@@ -1,5 +1,5 @@
 ---
-title: Vue-(2) vue methods,Json,filter
+title: Vue-(2) vue methods,filter
 layout: single
 author_profile: true
 read_time: true
