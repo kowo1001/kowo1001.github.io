@@ -286,8 +286,6 @@ Cross-origin간의 통신이 필요할 경우
 - Same-Origin : 상호간의 document에 자유롭게 접근 가능
 - Cross-Origin : 상호간의 document 접근 불가, 매우 제한적인 객체에만 접근 가능
 
-
-
 ### CORS 정책이란
 지금 같은 상황에서 cross-origin 간에 API를 요청하고 읽어드릴 필요가 있을 때가 있다
 그럴 때에는 'Access-Control_Allow-Origin' 헤더에 이 데이터를 읽을 수 있는 origin을
