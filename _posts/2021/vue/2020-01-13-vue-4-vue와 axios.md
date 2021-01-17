@@ -254,7 +254,12 @@ axios.post('/api/data/' + this.no + '/photo', data)
 ${requestScope.employeesAll.allEmployees}
 ```
 <% response.setHeader("Access-Control-Allow-Origin", "*"); %>를 주석처리하면 다음과 같은 에러가 뜬다
-![CORS위반](https://user-images.githubusercontent.com/37354978/104806749-1d12cf80-581d-11eb-8629-9099e8787730.PNG)
+### 에러 내용
+![XMLHttpRequest CORS위반](https://user-images.githubusercontent.com/37354978/104808130-83045480-5827-11eb-87c2-79216448fa97.PNG)
+XMLHttpRequest가 http://localhost/step11_BackLogic/Controller?command=getAll 쪽으로의 요청에 접근할 수 없다
+이 요청은 http://127.0.0.1:5500 으로부터 왔는데, CORS 정책에 의해서 막혔어
+'Access-Control-Allow-Origin 헤더가 존재하지 않으니까
+"나는 SOP의 기본 정책에 따라서 네가 이걸 읽는 것을 허가하지 않을거야" 라는 의미이다
 
 ### SOP(Same Origin Policy)란?
 한 origin으로부터 로드된 document 또는 script가 다른 origin의 리소스와 
@@ -281,12 +286,7 @@ Cross-origin간의 통신이 필요할 경우
 - Same-Origin : 상호간의 document에 자유롭게 접근 가능
 - Cross-Origin : 상호간의 document 접근 불가, 매우 제한적인 객체에만 접근 가능
 
-#### 에러 내용
-![XMLHttpRequest CORS위반](https://user-images.githubusercontent.com/37354978/104808130-83045480-5827-11eb-87c2-79216448fa97.PNG)
-XMLHttpRequest 리퀘스트 http://localhost/step11_BackLogic/Controller?command=getAll 쪽으로의 요청에 접근할 수 없다
-이 요청은 http://127.0.0.1:5500 으로부터 왔는데, CORS 정책에 의해서 막혔어
-'Access-Control-Allow-Origin 헤더가 존재하지 않으니까
-"나는 SOP의 기본 정책에 따라서 네가 이걸 읽는 것을 허가하지 않을거야" 라는 의미이다
+
 
 ### CORS 정책이란
 지금 같은 상황에서 cross-origin 간에 API를 요청하고 읽어드릴 필요가 있을 때가 있다
