@@ -1,5 +1,5 @@
 ---
-title: Vue-(6) vue component와 v-bind
+title: Vue-(7) vue component와 v-bind
 layout: single
 author_profile: true
 read_time: true
