@@ -1,5 +1,5 @@
 ---
-title: Spring-(1) 설치 및 설정
+title: Spring-(1) 설치 및 시작
 layout: single
 author_profile: true
 read_time: true
