@@ -58,4 +58,125 @@ Spring은 자체적으로 AOP를 지원하고 있기 때문에 트랜잭션이�
 - 구성 관계(Composition) : 부분은 전체와 같은 생명 주기를 가진다. (심장 in 사람)
 
 
+## Spring Project 만들기
 
+Java Project - Convert to Maven - Spring - Add Spring Project Nature
+
+
+## lombok 활용법
+-> </build> 아래 다음 코드를 넣어주기
+```xml
+    <properties>
+
+		<!-- Generic properties -->
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<!-- Spring -->
+		<spring-framework.version>4.3.30.RELEASE</spring-framework.version>
+
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring-framework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.8</version>
+		</dependency>
+	</dependencies>
+```
+
+playdata.xml - Namesspaces - beans, context 체크
+
+```xml
+<!-- 애노테이션 사용하겠다는 설정 -->
+<context:annotation-config />
+```
+```java
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
+
+@Component // <bean id="car" class="model.domain.Car" /> 동일한 설정
+public class Car {
+	private String carName;
+	private int carNumber;
+}
+```
+
+```java
+//Customer.java
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
+
+@Component
+public class Customer {
+	private String name;
+	private int age;
+	private Car car;
+}
+```
+
+```xml
+<!-- 스프링 빈으로 설정하고자 하는 class들이 내장된 package명 제시하면 스프링에게 스캔 요청 -->
+<context:component-scan base-package="model.domain" />
+```
+
+```java
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+//@ToString
+
+@Component // <bean id="car" class="model.domain.Car" scope="singleton"/> 동일한 설정
+@Scope("prototype") // <bean id="car" class="model.domain.Car" scope="prototype"/> 동일한 설정
+public class Car {
+	private String carName;
+	private int carNumber;
+}
+```
+
+```java
+@Component("c") // <bean id="c" class="model.domain.Car" scope="singleton"/> 동일한 설정
+@Scope("prototype") // <bean id="car" class="model.domain.Car" scope="prototype"/> 동일한 설정
+public class Car {
+	private String carName;
+	private int carNumber;
+}
+```
+```java
+//Test.java
+	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext("playdata.xml");
+		
+		Car c1 = context.getBean("c", Car.class);
+		System.out.println(c1);
+		
+		Car c2 = context.getBean("c", Car.class);
+		System.out.println(c2);
+		
+	}
+```
+사용자가 지정한 Component 이름으로 사용 가능
+
+## @Autowired
+- 의존 객체 주입시에 사용되는 애노테이션
+- 선언 위치 : 변수, 메소드, 생성자 (변수,메소드,생성자 중 하나에만 애노테이션 선언하기 -> 반드시 한 곳에만 설정)
+- 기능 : 타입과 일치가 되는 스프링 빈을 자동 주입
+- 예시 
+Customer가 Car를 의존
+- Car car
+- setCar() : setter injection
+- Customer(Car c) : constructor injection
