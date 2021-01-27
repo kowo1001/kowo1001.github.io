@@ -1,5 +1,5 @@
 ---
-title: Spring-(1) DI와 Annotation
+title: Spring-(1) DI와 AOP
 layout: single
 author_profile: true
 read_time: true
@@ -13,7 +13,23 @@ toc_sticky: true
 toc_label: 목차
 ---
 
-## Spring Framework(DI, AOP, MVC) 특징
+## Spring Framework 장점
+- 개발자들이 개발하고자 하는 애플리케이션 로직 개발에만 집중할 수 있음
+- 개발이 단순해짐
+- POJO 방식의 기술 사용이 가능 
+
+## Spring 빈(bean)이란?
+- Spring이 제어권을 가지고 생성 및 객체간의 관계를 관리하는 객체 의미
+
+## IoC컨테이너 또는 Spring 컨테이너란?
+- Spring 빈의 생성과 관계 설정, 사용, 생명주기 관리 등을 관장하는 기능을 제공해주며
+Spring의 주요 핵심 기능이므로 컨테이너라고도 함 
+
+
+## BeanFactory , ApplicationContext란 ?
+- Spring에선 빈의 생성과 관계 설정, 사용, 제거 등의 기능을 담당하는 컨테이너를 의미함
+- 컨테이너 기능을 담당하는 Spring의 주요 API
+![spring주요 API](https://user-images.githubusercontent.com/37354978/106012858-32320d00-60ff-11eb-9719-033b56efe74e.PNG)
 
 ## Aspect Oriented Programming [AOP] 지원
 
@@ -28,12 +44,6 @@ Spring은 자체적으로 AOP를 지원하고 있기 때문에 트랜잭션이�
 핵심 기능에 적용 되어야만 의미를 갖는 특별한 모듈을 의미
 ( 공통으로 가지는 중요 기능 로직을 구성하고 있는 것을 말함)
 
-|API유형|처리결과|
-|:-------------------------:|:-------------------------------:|
-|axios.get('URL주소').then().catch()|해당 URL로 get방식으로 요청<br>then()안에 반환값 로직 작성<br>catch()안에는 오류발생시 로직 작성|
-|axios.post('URL주소').then().catch()|해당 URL로 POST방식으로 요청<br>then()안에 반환값 로직 작성<br>catch()안에는 오류발생시 로직 작성|
-|axios({옵션})| HTTP요청에 대한 자세한 속성들을 직접 정의하여 보낼 수 있음|
-
 
 ## Dependency Injection [DI]
 
@@ -42,3 +52,10 @@ Spring은 자체적으로 AOP를 지원하고 있기 때문에 트랜잭션이�
 
 - 의존성을 주입한다는 의미
 - 자동차 내부에서 타이머를 생산하는 것이 아닌 외부에서 생산된 타이머를 자동차에 장착하는 작업
+
+## 의존관계
+- 집합 관계(Aggregation) : 부분이 전체와 다른 생명주기를 가진다.(세탁기 in 집)
+- 구성 관계(Composition) : 부분은 전체와 같은 생명 주기를 가진다. (심장 in 사람)
+
+
+
