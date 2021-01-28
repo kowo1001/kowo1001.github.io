@@ -1,5 +1,5 @@
 ---
-title: Spring-(1) DI와 AOP
+title: Spring-(1) Spring 개념과 DI
 layout: single
 author_profile: true
 read_time: true
@@ -31,37 +31,11 @@ Spring의 주요 핵심 기능이므로 컨테이너라고도 함
 - 컨테이너 기능을 담당하는 Spring의 주요 API
 ![spring주요 API](https://user-images.githubusercontent.com/37354978/106012858-32320d00-60ff-11eb-9719-033b56efe74e.PNG)
 
-## Aspect Oriented Programming [AOP] 지원
-
-Spring은 자체적으로 AOP를 지원하고 있기 때문에 트랜잭션이나 로깅, 보안과 같이 여러 비즈니스 모듈에서
-공통적으로 필요로 하는 공통 관심 사항을 핵심 로직과 분리시켜 각 모듈에 적용할 수 있음
-
-**AOP하면 '중복 코드 삭제' 무조건 암기할 것**
-
-## Aspect 란 ?
-보안과 로깅 모듈처럼 그 자체로 애플리케이션의 핵심 기능을 다루고 있지는 않지만,
-애플리케이션을 구성하는 중요한 요소이고,
-핵심 기능에 적용 되어야만 의미를 갖는 특별한 모듈을 의미
-( 공통으로 가지는 중요 기능 로직을 구성하고 있는 것을 말함)
-
-
-## Dependency Injection [DI]
-
-## 의존성이란?
-- 객체가 다른 객체를 참조
-
-- 의존성을 주입한다는 의미
-- 자동차 내부에서 타이머를 생산하는 것이 아닌 외부에서 생산된 타이머를 자동차에 장착하는 작업
-
-## 의존관계
-- 집합 관계(Aggregation) : 부분이 전체와 다른 생명주기를 가진다.(세탁기 in 집)
-- 구성 관계(Composition) : 부분은 전체와 같은 생명 주기를 가진다. (심장 in 사람)
-
 
 ## Spring Project 만들기
 
-Java Project - Convert to Maven - Spring - Add Spring Project Nature
-
+1) Java Project - Convert to Maven - Spring - Add Spring Project Nature
+2) playdata.xml - Namesspaces - beans, context 체크를 통해 *.xml파일 생성
 
 ## lombok 활용법
 -> </build> 아래 다음 코드를 넣어주기
@@ -92,7 +66,30 @@ Java Project - Convert to Maven - Spring - Add Spring Project Nature
 	</dependencies>
 ```
 
-playdata.xml - Namesspaces - beans, context 체크
+
+## Dependency Injection [DI]
+
+## 의존성이란?
+- 객체가 다른 객체를 참조
+
+- 의존성을 주입한다는 의미
+- 자동차 내부에서 타이머를 생산하는 것이 아닌 외부에서 생산된 타이머를 자동차에 장착하는 작업
+
+## 의존관계
+- 집합 관계(Aggregation) : 부분이 전체와 다른 생명주기를 가진다.(세탁기 in 집)
+- 구성 관계(Composition) : 부분은 전체와 같은 생명 주기를 가진다. (심장 in 사람)
+
+
+## @Autowired
+- 의존 객체 주입시에 사용되는 애노테이션
+- 선언 위치 : 변수, 메소드, 생성자 (변수,메소드,생성자 중 하나에만 애노테이션 선언하기 -> 반드시 한 곳에만 설정)
+- 기능 : 타입과 일치가 되는 스프링 빈을 자동 주입
+- 예시 
+Customer가 Car를 의존
+- Car car
+- setCar() : setter injection
+- Customer(Car c) : constructor injection
+
 
 ```xml
 <!-- 애노테이션 사용하겠다는 설정 -->
@@ -170,13 +167,3 @@ public class Car {
 	}
 ```
 사용자가 지정한 Component 이름으로 사용 가능
-
-## @Autowired
-- 의존 객체 주입시에 사용되는 애노테이션
-- 선언 위치 : 변수, 메소드, 생성자 (변수,메소드,생성자 중 하나에만 애노테이션 선언하기 -> 반드시 한 곳에만 설정)
-- 기능 : 타입과 일치가 되는 스프링 빈을 자동 주입
-- 예시 
-Customer가 Car를 의존
-- Car car
-- setCar() : setter injection
-- Customer(Car c) : constructor injection
