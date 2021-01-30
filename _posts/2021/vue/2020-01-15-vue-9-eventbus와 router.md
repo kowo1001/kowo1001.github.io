@@ -1,5 +1,5 @@
 ---
-title: Vue-(6) eventbus와 router
+title: Vue-(9) eventbus와 router
 layout: single
 author_profile: true
 read_time: true
