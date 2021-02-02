@@ -19,7 +19,7 @@ toc_label: 목차
 
 
 ---
-### :sunny: WORKMAN_BLIND 두번째 이야기
+### WORKMAN_BLIND 두번째 이야기
 
 안녕하세요! 새롭게 돌아온 **WORKMAN_BLIND**입니다.:smile:
 저희는 템플릿을 대폭 수정하고 각종 기능을 추가하여 더욱 유용한 프로그램으로 거듭났답니다.
@@ -29,7 +29,7 @@ toc_label: 목차
 ---
 
 
-## :movie_camera:WORKMAN BLIND 시연 영상
+## WORKMAN BLIND 시연 영상
 [![workmanblind 시연영상](https://img.youtube.com/vi/HYjsBZNoflA/0.jpg)](https://www.youtube.com/embed/HYjsBZNoflA) 
 ---
 
@@ -38,7 +38,7 @@ toc_label: 목차
 
 ---
 
-### :star: WORKMAN_BLIND의 탄생과정
+### WORKMAN_BLIND의 탄생과정
 <br><br><br><br>
 안녕하세요 알바몬 여러분:smile: 
 <br><br><br><br>
@@ -84,7 +84,7 @@ toc_label: 목차
 ---
 
 
-## :sunny: Service 
+## Service 
 
 ---
 
@@ -178,7 +178,7 @@ toc_label: 목차
 <img width="486" alt="technology used" src="https://user-images.githubusercontent.com/37354978/104281745-4ff15680-54f1-11eb-8a4f-9b796d67dcb5.png">
 
 ---
-### :eyes: Structure
+### Structure
 
 #### 기존 테이블 구조
 ![erd](https://user-images.githubusercontent.com/73862504/103251857-ff8cdb80-49bd-11eb-99ca-70a725b0e7a8.png)
@@ -318,7 +318,7 @@ commit;
 
 ---
 
-## :fire: ISSUE <1> JPA Project
+## ISSUE <1> JPA Project
 
 ---
 
@@ -395,7 +395,7 @@ tomcat 8.5 서버를 이클립스에 연동해서 해결함
 - **DDL, DML** : entity와 순서가 다르게 되어있어 생성 및 추가 시 애를 먹었던 테이블도 있었고 구조가 자주 바뀐 점이 아쉬웠다. 그 과정에서 헷갈려하는 팀원들도 있고 오류도 다소 나온편이라 당연한 말이지만 초기에 확실하게 잡아놓는것이 중요하다고 느꼈다.
 
 ---
-## :zap: ISSUE <2> JavaScript project
+## ISSUE <2> JavaScript project
 
 ---
 
@@ -448,7 +448,7 @@ https://insight-bgh.tistory.com/117
   - 장종욱 [(JongwookJang)](https://github.com/kowo1001)
  
 
-## :hammer_and_wrench: 참고
+## 참고
 
 :mag: [엑셀문서링크](https://docs.google.com/spreadsheets/d/19So7A99qJnlKGLl4MukpBJ5gDMmvVqs-dZwoCNEFR7c/edit#gid=0)
 
