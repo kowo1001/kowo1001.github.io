@@ -32,11 +32,11 @@ Spring은 자체적으로 AOP를 지원하고 있기 때문에 트랜잭션이�
 
 |Advice 종류|XML스키마 기반의 POJO 클래스를 이용|@Aspect애노테이션 기반|설명|
 |:-------------------------:|:-------------------------------:|:-------------------------------:|:-------------------------------:|
-|Before|<aop:before>|@Before|target 객체의 메소드 호출시 호출 전에 실행|
-|AfterReturning|<aop:after-returning>|@AfterReturning|target 객체의 메소드가 예외없이 실행된 후 호출|
-|AfterThrowing|<aop:after-throwing>|@AfterThrowing|target객체의 메소드가 실행하는 중 예외가 발생한 경우에 호출|
-|After|<aop:after>|@After|target 객체의 메소드를 정상 또는 예외 발생 유무와 상관없이 실행<br> try의 finally와 흡사|
-|Around|<aop:around>|@Around|target객체의 메소드 실행 전, 후 또는 예외 발생 시점에 모두 실행해야할 로직을 담아야 할 경우|
+|Before|\<aop:before\>|@Before|target 객체의 메소드 호출시 호출 전에 실행|
+|AfterReturning|\<aop:after-returning\>|@AfterReturning|target 객체의 메소드가 예외없이 실행된 후 호출|
+|AfterThrowing|\<aop:after-throwing\>|@AfterThrowing|target객체의 메소드가 실행하는 중 예외가 발생한 경우에 호출|
+|After|\<aop:after\>|@After|target 객체의 메소드를 정상 또는 예외 발생 유무와 상관없이 실행<br> try의 finally와 흡사|
+|Around|\<aop:around\>|@Around|target객체의 메소드 실행 전, 후 또는 예외 발생 시점에 모두 실행해야할 로직을 담아야 할 경우|
 
 ## 로직구분
 1. 핵심 로직 : 비즈니스 로직 (core) ex. 구매와 판매
@@ -48,7 +48,7 @@ Spring은 자체적으로 AOP를 지원하고 있기 때문에 트랜잭션이�
 - after : 핵심로직 실행후, 후처리
 - throwing : 예외 발생 - 핵심로직 실행중 예외 발생
 - returning : 핵심 로직 정상 실행되면서 반환시 - 후처리
-- around : before,after,throwing,returning,around 포괄적인 설정 가능
+- around : before,after,throwing,returning 포괄적인 설정 가능
 
 ## 용어 및 특징
 - pointcut , pointcut-ref : 공통로직을 적용받을 핵심 로직의 위치 + 시점
