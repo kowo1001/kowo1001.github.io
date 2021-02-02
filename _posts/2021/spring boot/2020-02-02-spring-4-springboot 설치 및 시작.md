@@ -123,7 +123,7 @@ spring boot -> spring starter Project -> Packaging: War,Type Maven: Javerversion
 왼쪽에 Web - Spring Web -> 왼쪽에 Developer Tools -> Spring Boot DevTools, Lombok 체크 -> 성공!! 
 
 
-application.properties에 아래 코드를 복사 , 붙여넣기 하기
+application.properties에 아래 코드와 같이 작성하기
 ```properties
 server.port=80
 
