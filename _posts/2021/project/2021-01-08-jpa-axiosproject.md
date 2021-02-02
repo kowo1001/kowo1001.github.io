@@ -13,7 +13,6 @@ toc_sticky: true
 toc_label: 목차
 ---
 
-# JPA & AXIOS MiniProject
 
 # WORKMAN_BLIND Project
 
