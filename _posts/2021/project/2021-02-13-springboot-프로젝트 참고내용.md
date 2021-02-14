@@ -1,5 +1,5 @@
 ---
-title: JPA & AXIOS MiniProject
+title: SpringBoot MidProject 참고
 layout: single
 author_profile: true
 read_time: true
