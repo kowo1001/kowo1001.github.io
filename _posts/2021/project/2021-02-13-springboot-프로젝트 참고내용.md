@@ -76,3 +76,7 @@ https://cli.vuejs.org/guide/mode-and-env.html#modes
 ## 네이버지도 API로 구현한 지도기반 맛집 저장 서비스 실행 순서 
 npm install -g nodemon
 nodemon ./bin/www
+
+## MYSQL Error
+MYSQL Installer에서 MySQL Server 옆에 있는 Reconfigure 클릭 - Authentication Method 
+기존 Use Strong Password Encryption for Authntication(RECOMMENTED) 에서 Uset Legecy Authentication Method 로 체크하기
