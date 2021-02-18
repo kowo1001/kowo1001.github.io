@@ -80,3 +80,8 @@ nodemon ./bin/www
 ## MYSQL Error
 MYSQL Installer에서 MySQL Server 옆에 있는 Reconfigure 클릭 - Authentication Method 
 기존 Use Strong Password Encryption for Authntication(RECOMMENTED) 에서 Uset Legecy Authentication Method 로 체크하기
+
+## express-session 및 axios 설치 
+npm install cores --save <br>
+npm install express-session --save  <br>
+npm install axios --save <br>
