@@ -14,23 +14,28 @@ toc_label: 목차
 ---
 # Mid Project 진행시 참고 내용
 
-## 코로나맵 클론 프로젝트
+## 구르망 프로젝트 참고 내용
 - Node.js는 자바스크립트 런타임
 - 런타임 : 프로그래밍 언어가 구동되는 환경
-- npm : node package manager 
+- npm : node package manager의 줄임말
 - 모듈 : 애플리케이션을 구성하는 개별적 요소(= 패키지)
 - 모듈을 통해 기능적으로 분리되어 개발 효율성과 유지보수성 향상
 - npm은 모듈들을 패키지화하여 모아둔 저장소 역할 및 설치 ,관리해주는 툴
-- node --version 은 v.14.4.0을 사용
-- npm --version은 6.14.0을 사용
+- node 버전은 v.14.15.0을 사용 (node --version 명령을 통해 node 버전 확인 가능)
 - npm install -g nodemon을 통해 설치 
-- 글로벌로 설치를 해서 다른 프로젝트 경로 상관없이 모든곳에서 nodemon 패키지를 쓸수 있도록 함
 - nodemon은 서버를 껐다켰다하는 불편함을 해소시켜주는 필요한 패키지
+-  -g : 글로벌 속성으로 설치 (글로벌로 설치를 해서 다른 프로젝트 경로 상관없이 모든곳에서 nodemon 패키지를 쓸수 있도록 함)
 - npm install -g express 설치 
 - npm install -g express-generator 를 통해 웹서버를 쉽게 만들 수 있음
--  express는 웹 서버를 쉽게 만들 수 있는 프레임워크
+- express는 웹 서버를 쉽게 만들 수 있는 프레임워크
 - express --ejs gourmandmap 을 통해 gourmandmap 프로젝트 폴더 생성
-- nodemon ./bin/www 을 통해 서버 실행 가능
+- package.json에서 아래 코드를 작성하면 npm start를 하면 nodemon 서버가 돌아감(nodemon ./bin/www가 실행됨)
+```json
+"scripts": {
+    "start": "nodemon ./bin/www"
+  }
+```
+- npm start 또는 nodemon ./bin/www 을 통해 서버 실행 가능
 - 네이버 클라우드 플랫폼 : 다양한 api 서비스를 사용할 수 있는 개발자 플랫폼
 - jQuery라는 것은 클라이언트 쪽의 이벤트들을 조금더 쉽게 작성할 수 있도록 고안된 라이브러리
 - jQuery cdn 구글 검색 -> 최상단 jQuery cdn 클릭 -> jQuery 3.x에서 minified script 복사
@@ -86,10 +91,14 @@ npm install cores --save <br>
 npm install express-session --save  <br>
 npm install axios --save <br>
 
-----
+## frontend에서 chart를 사용하기 위한 설치
 npm install --save chart.js vue-star-rating
+
+## cookie를 사용하기 위한 설치 
 npm install -s cookie
-npm  install cookie-parser
+
+## cookie-parser를 사용하기 위한 설치
+npm install cookie-parser
 
 ## 세션쿠키
 사용자가 사이트 탐색 시에 관련한 설정들과 선호사항을 저장하는 임시 쿠키. 브라우저를 닫는 순간 삭제
@@ -134,3 +143,85 @@ CSRF 공격의 예제는 다음과 같은 항목들이 있습니다.
 정리를 하자면, 웹스토리지에 토큰을 담으면 XSS 에 취약하고, 쿠키에 담으면 CSRF 에 취약해집니다. 하지만, CSRF는 보안에 신경을 쓰면 차단 할 수 있습니다.
 
 우리는 앞으로 인증시스템을 구현 하면서, 토큰을 httpOnly 속성이 활성화된 쿠키에 담아서 구현을 하도록 하겠습니다.
+
+## Json Web Tokens란?
+JWT는 사용자 정보를 JSON 객체에 담아 이를 암호화하고 해싱 작업을 거쳐 문자열 토큰을 생성하는 기술<br>
+
+## Json Web Tokens 설치 
+JWT를 사용하기 위해서 jsonwebtoken 모듈을 설치합니다.<br>
+npm install jsonwebtoken
+
+## Json Web Tokens Decoding을 위한 라이브러리 설치
+jwt-decode는 Base64URL로 인코딩되어있는(encoded) JWT 토큰을 디코딩(decoding)을 하는데 도움을 주는 라이브러리 입니다.  <br>
+npm install jwt-decode
+
+
+```javascript
+
+//routes 폴더에서 index.js에서 jsonwebtoken을 가져와서 사용하고 싶을때 사용한다
+var jwt = require('jsonwebtoken');
+
+//쿠키에서 accessToken 라는 쿠키이름을 가져와서 token 변수에 저장한다
+const token = req.cookies['accessToken'];
+
+//토큰과 jwtSecret을 통해 검증
+tokenResult = jwt.verify(token, jwtSecret)
+
+//get으로 index 페이지를 불러올 때 사용한다
+router.get("/mymap", (req, res, rows) => {               
+  res.render("index", { title: "Express" });
+});
+
+// 쿠키를 출력해서 확인해보고 싶을때 사용한다
+console.log(req.cookies);
+// 쿠키이름이 accessToken인 값을 token 변수에 넣고 jwt_decode를 통해 토큰을 디코딩한다
+var token = req.cookies['accessToken'];
+var decoded = jwt_decode(token);
+
+//헤더에 있는 쿠키값을 가져와서 jwtSecret 비밀키와 검증을 해서 인증을 한다 ? 
+const token = req.headers.cookies.user
+const tokenResult = jwt.verify(token, jwtSecret)
+console.log(tokenResult)
+
+// 헤더에 있는 토큰을 디코딩해서 출력한다 ?
+var decodedHeader = jwt_decode(token, { header: true });
+console.log(decodedHeader); 
+
+//토큰을 디코딩해서 값을 확인한다
+var token = "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX251bSI6MSwidXNlcl9pZCI6ImVlIiwibmFtZSI6ImVlIn0.HEURm4BIXp6YogTzNPIAKu5tcHrFB9hQVhKKV157xnw";
+var decoded = jwt-decode(token);
+console.log(decoded);
+
+```
+
+
+## 토큰 데이터에서 USERNAME 가져오는 예제
+```html
+<a href="/mymap" id="name"></a>
+```
+
+```javascript
+window.onload = function () {
+  $.ajax({
+      url: "/mymap/printname",
+      type: "GET", 
+  })
+  .done((response) => {
+      document.getElementById('name').innerHTML = `${response.data}님의 맛집지도 입니다`;
+      console.log("토큰 데이터 입력 성공");
+  })
+  .fail((error) => {
+      console.log("토큰 데이터 입력 실패");
+  });
+}
+```
+## 향후 사용 예정
+쿠키에 있는 토큰 데이터를 mysql DB에 저장하기 위해 사용된다. <br>
+프로젝트 끝나고 사용해볼 예정이다.
+npm install -s express-mysql-session
+
+## 참고 링크
+https://crispypotato.tistory.com/58
+https://www.npmjs.com/package/jwt-decode
+https://victorydntmd.tistory.com/116  ----> 비밀키 모듈 생성하는 거 나와있음. 
+https://www.npmjs.com/package/express-jwt
