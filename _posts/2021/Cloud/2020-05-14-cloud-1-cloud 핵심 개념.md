@@ -13,6 +13,9 @@ toc_sticky: true
 toc_label: 목차
 ---
 
+ⓒ Copyright Microsoft Corporation. All rights reserved.
+
+
 ## 클라우드의 종류
 
 ### 퍼블릭 클라우드
@@ -53,3 +56,80 @@ toc_label: 목차
 ### VPN 게이트웨이와 피어링의 차이점은 무엇인가요?
 - VPN 게이트웨이는 환경과 상관없이 장비끼리 연결할 때 사용하는 것
 - 피어링은 Azure 네트워크끼리 연결할 때 사용하는 것
+
+### Windows Virtual Desktop 
+- VDI
+- window10 애플리케이션을 가상화해서 올려놓고 쓰는것 (웹을 쓰는 경우도 있음)
+- 원격 접속해서 다른 환경에 있는 windows10에 대해서 접근할 수 있는 것
+
+### ACI(Azure Container Instances)
+
+### AKS(K8S, Azure Kubernetes Service)
+
+### 피어링
+- Virtual Network 위에 서버들이 있을때 다른 Virtual Network에 있는 서버들에 접근하기 위한 것
+- Azure 끼리는 게이트웨이 없이 연결할 수 있게 해주는 것
+
+### VPN
+- VPN은 게이트웨이라는 서비스를 만들어서 사용해야함
+- 장비끼리 연결해주기 위해 사용되는 것
+
+### 컨테이너 저장소
+- 스토리지에서 얘기하는 하나의 유형 
+- 스토리지에서 저장시켜주는 유형 
+
+### 파일 저장소
+- N드라이브처럼 디스크 저장소로 사용하는 것
+- 파일 공유 (File Share)
+
+DYNAMIC 365 -> ERP, CRM을 말합니다.
+DYNAMIC 365, Office 365 모두 MS Cloud 서비스입니다
+
+### Azure compute services
+Azure compute는 디스크, 프로세서, 메모리, 네트워킹 및 운영체제와 같은 컴퓨팅 리소스를 제공하는 주문형 컴퓨팅 서비스 입니다.
+- Virtual Machines, App Services, Container Instances, Azure Kubernetes Services (AKS) , Windows Virtual Desktop 
+
+### Azure virtual machines
+Azure VM(가상 머신)은 물리적 컴퓨터의 소프트웨어 에뮬레이션 입니다.
+- 가상 프로세서, 메모리, 스토리지 및 네트워킹이 포함됩니다
+- 전체 제어 및 사용자 지정을 제공하는 IaaS 제품 입니다
+
+BYOL은 Bring Your Own License를 말합니다.
+PAYG는 Pay As You Go를 말합니다.
+
+### Azure App Services
+Azure App Services는 웹 앱 및 API를 빠르게 빌드, 배포 및 확장 할 수 있는 완전 관리형 플랫폼 입니다
+- .NET, .NET Core, Node.js, Java, Python 또는 php에서 작동합니다.
+- 엔터프라이즈 급 성능, 보안 및 규정 준수 요구 사항을 갖춘 PaaS 제품 입니다.
+
+### Azure 컨테이너 서비스
+Azure Containers는 운영 체제 관리가 필요하지 않은 가볍고 가상화 된 환경이며 요청 시 변경 사항에 대응할 수 있습니다
+Azure Container Instances : 가상 머신이나 추가 서비스를 관리할 필요없이 Azure에서 컨테이너를 실행하는 PaaS 제품 입니다
+- 컨테이너 서비스 중에 하나 입니다. 
+- IaaS는 아니고, 가상머신을 Azure가 직접 관리하고, 위에 도커 서비스 자체도 Azure가 관리를 합니다 
+- 안에 있는 컨테이너 박스만 조합을 해서 애플리케이션을 설치해서 쓰는 것 입니다
+- 보통 이 작업을 자세히 들여다보면, 이미지로 이미지 셋팅작업을 하고 다시 배포를 한 뒤에 운영하는 방식입니다. 
+
+Azure Kubernetes Service : 분산 아키텍처와 대용량 컨테이너를 사용하는 컨테이너를 위한 오케스트레이션 서비스 입니다.
+- 쿠버네티스는 AZ-204, AZ-400에서 구체적으로 다룰 예정입니다.
+
+### Windows Virtual Desktop
+- Windows Virtual Desktop은 클라우드에서 실행되는 데스크톱 및 앱 가상화 서비스입니다.
+
+Azure에서 Windows Virtual Desktop을 실행하면 다음과 같은 작업이 가능합니다.
+- 확장 가능한 완전한 Windows 10을 제공하는 다중 세션 Windows 10 배포 설정
+- 엔터프라이즈용 Office 365 앱을 가상화하고 다중 사용자 가상 시나리오에서 실행되도록 최적화
+- Windows 7 가상 데스크톱에 무료 기간 연장 보안 업데이트 제공
+- 기존 RDS(원격 데스크톱 서비스)와 Windows Server 데스크톱 및 앱을 컴퓨터로 가져오기
+- 데스크톱 및 앱 가상화
+- 통합 관리 환경을 사용하여 Windows 10/Windows Server/Windows 7 데스크톱 및 앱 관리
+
+
+Windows Virtual Desktop은 클라우드에서 실행되는 데스크톱 및 앱 가상화 입니다.
+- 추가 게이트웨이 서버를 실행할 필요없이 완전한 데스크톱 가상화 환경을 만듭니다.
+- 다양한 워크로드를 수용할 수 있도록 무제한 호스트 풀을 게시합니다
+- 풀링된 다중 세션 리소스로 비용 절감합니다.
+
+
+ⓒ Copyright Microsoft Corporation. All rights reserved.
+
