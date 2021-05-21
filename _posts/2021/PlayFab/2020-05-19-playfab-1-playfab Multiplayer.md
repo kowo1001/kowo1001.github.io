@@ -26,4 +26,9 @@ toc_label: 목차
 - 파티 : 네트워킹 및 접근성 높은 게임 채팅을 사용하여 플레이어 연결
 - 서버 : Azure에서 사용자 지정 멀티 플레이어 서버를 동적으로 크기 조정
 
+### 멀티 플레이어 서버
+- PlayFab 멀티 플레이어 서버(MPS)는 게임에 최적화된 서버 호스팅 서비스입니다. (글로벌 분산 클라우드 서비스)
+- 
+
+
 ⓒ Copyright Microsoft Corporation. All rights reserved.
