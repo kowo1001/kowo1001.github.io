@@ -45,4 +45,22 @@ toc_label: 목차
 - 점점 그 범위를 넓혀서 구글 안드로이드, iPhone, 닌텐도 스위치 등 타 플랫폼에도 접근하는 중이다.
 
 
+#### PlayFab 활용하는 게임 회사
+Playfab을 쓰는 업체들은 보시다시피 캡콤, 반다이남코, 로비오(앵그리버드 개발사), 미니클립 등 해외 유명 게임회사들이 있습니다.
+
+
+#### PlayFab 주요 기능
+Playfab은 모바일 게임이나 PC 게임 개발을 위한 게임서버 기능들을 두루 갖추고 있습니다.
+
+1. 퀵로그인(페이스북,구글,게임센터,스팀,트위치 등)
+2. 커스텀 로직 개발 기능 (아이템 인벤토리,캐릭터 강화,합성,조합 등등)
+3. 통계 기능 (업적,부분유료화를 위한 기반 정보 등)
+4. 모바일 푸시 기능, 전체 공지 뿌리기 기능
+5. 플레이어 정보 검색 기능 (가령 친구 캐릭터를 게임 플레이에 가져다 쓰기 용도 등)
+6. 어뷰징,해킹,불량 유저 제어 기능
+7. 리더보드 즉 랭킹 시스템
+
+[출처] : http://blog.naver.com/PostView.nhn?blogId=imays&logNo=221074670286&redirect=Dlog&widgetTypeCall=true&directAccess=false
+
+
 ⓒ Copyright Microsoft Corporation. All rights reserved.
