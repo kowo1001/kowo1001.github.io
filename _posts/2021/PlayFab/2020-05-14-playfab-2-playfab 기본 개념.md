@@ -1,5 +1,5 @@
 ---
-title: PlayFab-(1) 핵심 개념
+title: PlayFab-(2) 기본 개념
 layout: single
 author_profile: true
 read_time: true
@@ -12,8 +12,6 @@ toc: true
 toc_sticky: true
 toc_label: 목차
 ---
-
-ⓒ Copyright Microsoft Corporation. All rights reserved.
 
 ## PlayFab 이란 ?
 - 라이브 게임의 빌드와 운영을 위한 종합적인 LiveOps 백 엔드 플랫폼

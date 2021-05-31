@@ -1,5 +1,5 @@
 ---
-title: PlayFab-(1) 핵심 개념
+title: PlayFab-(6) Data and Analytics
 layout: single
 author_profile: true
 read_time: true
@@ -13,7 +13,6 @@ toc_sticky: true
 toc_label: 목차
 ---
 
-ⓒ Copyright Microsoft Corporation. All rights reserved.
 
 ## Data and Analytics
 PlayFab의 데이터 및 분석 기능은 플레이어의 행동을 실시간으로 이해하고 대응할 수 있도록 도와줍니다. 원스텝 스토리지, 데이터 분석, 내보내기 및 처리만으로 흥미로운 솔루션을 제공합니다. 플레이어를 참여시키고 개발자가 게임 플레이에보다 효과적으로 집중할 수있는 자유를 제공하는 데 필요한 전체 도구를 경험할 수 있습니다. 

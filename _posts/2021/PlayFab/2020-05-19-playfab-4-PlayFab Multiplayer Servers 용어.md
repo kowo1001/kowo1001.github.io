@@ -1,5 +1,5 @@
 ---
-title: PlayFab-(1) 핵심 개념
+title: PlayFab-(1) Multiplayer Server 용어
 layout: single
 author_profile: true
 read_time: true
@@ -13,7 +13,6 @@ toc_sticky: true
 toc_label: 목차
 ---
 
-ⓒ Copyright Microsoft Corporation. All rights reserved.
 
 ## Azure PlayFab Multiplayer Server에 사용되는 용어
 

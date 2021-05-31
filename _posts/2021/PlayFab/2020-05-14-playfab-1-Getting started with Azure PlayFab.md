@@ -13,7 +13,6 @@ toc_sticky: true
 toc_label: 목차
 ---
 
-ⓒ Copyright Microsoft Corporation. All rights reserved.
 
 ## Getting started with Azure PlayFab
 
