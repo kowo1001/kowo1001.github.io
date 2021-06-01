@@ -7,7 +7,7 @@ comments: true
 share: true
 related: true
 categories:
-- Spring
+- Network
 toc: true
 toc_sticky: true
 toc_label: 목차
@@ -29,5 +29,8 @@ toc_label: 목차
 - 사용하지 않는 IP 정보는 회수되어 사용하는 경우에만 재할당되어 사용자 이동이 많고 한정된 IP 주소를 가진 경우 유용하게 사용될 수 있습니다.
 
 ## DHCP 프로토콜
+- DHCP는 BOOTP(Bootstrap Protocol)라는 프로토콜을 기반으로 합니다.
+- DHCP는 BOOTP와 유사하게 동작하지만 BOOTP에서 지원되지 않는 몇 가지 기능이 추가된 확장 프로토콜 입니다.
+
 
 
