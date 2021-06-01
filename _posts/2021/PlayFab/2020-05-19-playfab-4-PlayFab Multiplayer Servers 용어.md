@@ -28,8 +28,6 @@ PlayFab VM 에이전트: 이 에이전트는 PlayFab VM에 기본 제공되어 P
 
 PlayFab 멀티 플레이어 플랫폼 서비스: PlayFab 멀티 플레이어 서버의 백그라운드에서 실행되는 관리 서비스입니다.
 
-### PlayFab Multiplayer Servers
-
 
 
 ⓒ Copyright Microsoft Corporation. All rights reserved.
