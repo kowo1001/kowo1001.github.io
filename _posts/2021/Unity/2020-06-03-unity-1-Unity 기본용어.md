@@ -90,7 +90,7 @@ ex) 적 오브젝트, 나무 오브젝트, 공격 효과음 오브젝트, 불 �
 ## Effect
 ## Audio
 ## Video
-##UI
+## UI
 
 
 3. Camera & Light
