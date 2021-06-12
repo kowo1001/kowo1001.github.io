@@ -87,11 +87,14 @@ ex) 적 오브젝트, 나무 오브젝트, 공격 효과음 오브젝트, 불 �
 - 텍스처를 적용하면 모든 면에 동일한 이미지가 표현된다.
 
 ## 2D Object
-## Effect
-## Audio
-## Video
-## UI
 
+## Effect
+
+## Audio
+
+## Video
+
+## UI
 
 3. Camera & Light
 
