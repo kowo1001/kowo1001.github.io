@@ -110,6 +110,9 @@ transform.position += Vector3.right * 1 * Time.deltaTime;
 
 
 
+https://www.youtube.com/watch?v=B3okDPOPgc0&list=PLC2Tit6NyVie46nbdEM00wFoojjRlXIcf&index=3
+04:33
+
 
 
 
