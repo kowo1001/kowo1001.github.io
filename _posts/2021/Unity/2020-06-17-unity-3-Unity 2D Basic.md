@@ -108,10 +108,60 @@ transform.position += Vector3.right * 1 * Time.deltaTime;
 - 특징 : 다른 게임오브젝트의 Collider 2D들을 하나로 묶어주는 역할 (Box Collider 2D, Polygon Collider 2D만 가능)
 ![그림6](https://user-images.githubusercontent.com/37354978/122361985-b5f77380-cf92-11eb-8a4b-41f9a06ec6fb.png)
 
+### 두 오브젝트가 충돌하려면?
+- 서로 다른 두 오브젝트가 충돌하기 위한 필수 조건
+- 1. 두 오브젝트 모두 충돌 범위인 Collider2D 컴포넌트를 가지고 있어야 한다
+- 2. 둘 중 하나 이상의 오브젝트가 물리 처리를 담당하는 Rigidbody2D 컴포넌트를 가지고 있어야 한다
+![그림7](https://user-images.githubusercontent.com/37354978/122529770-c96d1200-d058-11eb-8e69-e3fc2969e78a.png)
+
+![그림8](https://user-images.githubusercontent.com/37354978/122530711-bdce1b00-d059-11eb-98ce-dda45896055e.png)
+- Tip. Rigidbody2D는 오브젝트에 물리를 적용, 처리하는 클래스로 클래스 내부에 이동 관련 함수가 작동하고 있다
+단지, 이동 방향과 속도를 나타내는 속력(velocity)의 초기 값이 (0,0)이어서 움직이지 않는 것이다
+- 코드와 같이 기존의 transform.position += ... 이동 코드 대신 Rigidbody2D에 있는 속력(velocity) 변수만 설정해주면 Rigidbody2D에 의해서 이동이 가능하다
+
+**04:35 게임 오브젝트 충돌 처리 실습 난이도 상..**
+
+- 게임 내에선 오브젝트가 단순히 충돌했다!로 끝나는 것이 아닌 충돌에 의해 함수가 호출되고, 함수에서 다양한 역할을 하게 된다
+**아이템을 획득하거나 적을 공격하거나 함정을 밟아 장애물이 튀어나온다거나와 같이..**
+
+- 물리적인 충돌이 일어나고, 이벤트 함수가 호출
+- **OnCollisionEnter2D()** : 두 오브젝트가 충돌하는 순간 1회 호출
+- **OnCollisionStay2D()** : 충돌 직후 맞닿아 있는 동안 매 프레임 호출
+- **OnCollisionExit2D()** : 두 오브젝트가 떨어져서 충돌이 종료되는 순간 1회 호출
+
+매개변수 Collision2D collision
+- 현재 컴포넌트를 가지고 있는 오브젝트에 부딪힌 오브젝트 정보
+![그림9](https://user-images.githubusercontent.com/37354978/122533244-4b126f00-d05c-11eb-8108-ed14e1e66fc1.png)
+
+- 물리적인 충돌 없이 이벤트 함수가 호출
+- OnTriggerEnter2D() : 두 오브젝트가 충돌하는 순간 1회 호출
+- OnTriggerStay2D() : 충돌 직후 맞닿아 있는 동안 매 프레임 호출
+- OnTriggerExit2D() : 두 오브젝트가 떨어져서 충돌이 종료되는 순간 1회 호출
+
+매개변수 Collider2D collision
+- 현재 컴포넌트를 가지고 있는 오브젝트에 부딪힌 오브젝트 정보
+![그림10](https://user-images.githubusercontent.com/37354978/122534349-6467eb00-d05d-11eb-82ef-f032fe98191a.png)
+
+- 내가 소속된 게임오브젝트의 컴포넌트 정보
+- GetComponent<컴포넌트>()
+- 내가 아닌 다른 게임오브젝트의 컴포넌트 정보
+- 게임오브젝트.GetComponent<컴포넌트>()
+- 다른 게임오브젝트의 정보는 코드와 같이 미리 변수를 만들어서 게임오브젝트 정보를 저장해두고 사용할 수도 있고, 유니티에서 제공하는 함수를 이용해 탐색할 수도 있다
+
+- LeftTilt & RightTilt
+![그림11](https://user-images.githubusercontent.com/37354978/122534974-0a1b5a00-d05e-11eb-8825-58f0505ee6eb.png)
+
+## 게임오브젝트 생성 함수 Instantiate()
+
+### 프리팹(Prefab)이란 ?
+- 게임(Hierarchy View)에 존재하는 게임오브젝트를 Project View에 파일로 저장해 둔 것
+- 1. 원하는 형태로 게임오브젝트를 꾸며준다. (적 캐릭터, 아이템 등)
+- 2. Hierarchy View의 게임오브젝트를 Project View로 드래그&드롭한다
+- 3. Hierarchy View에 있는 게임 오브젝트를 삭제한다
 
 
-https://www.youtube.com/watch?v=B3okDPOPgc0&list=PLC2Tit6NyVie46nbdEM00wFoojjRlXIcf&index=3
-04:33
+
+
 
 
 
