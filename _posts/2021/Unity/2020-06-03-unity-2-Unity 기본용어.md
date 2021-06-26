@@ -22,7 +22,7 @@ toc_label: 목차
 
 ## 씬 (Scene)
 - 게임의 장면이나 상태를 저장하는 단위
-- 하나의 거대한 게임을 씬 단위로 관맇며, 코드를 이용해 이동이 가능하다
+- 하나의 거대한 게임을 씬 단위로 관리하며, 코드를 이용해 이동이 가능하다
 ex) Intro Scene, Menu Scene, Stage 1~N Scene, GameOver Scene, Ending Scene, etc ...
 
 ![그림1](https://user-images.githubusercontent.com/37354978/121036299-9f5e5900-c7e9-11eb-9724-ff0fd0761424.png)
