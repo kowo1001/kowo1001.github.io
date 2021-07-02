@@ -1,5 +1,5 @@
 ---
-title: Baekjoon 2884:알람 시계
+title: Programmers Lv1-K번째수
 layout: single
 author_profile: true
 read_time: true
