@@ -1,5 +1,5 @@
 ---
-title: PlayFab-(4) PlayFab 멀티 플레이어
+title: PlayFab-(5) PlayFab 멀티 플레이어
 layout: single
 author_profile: true
 read_time: true
