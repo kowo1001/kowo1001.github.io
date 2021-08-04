@@ -1,5 +1,5 @@
 ---
-title: 프로그래머스 :Reverse Integer
+title: LeetCode :Palindrome Number
 layout: single
 author_profile: true
 read_time: true
@@ -14,34 +14,34 @@ toc_label: 목차
 ---
 
 ## 문제 
-Given a signed 32-bit integer x, return x with its digits reversed. <br>
-If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.<br>
+Given an integer x, return true if x is palindrome integer.<br>
 
-Assume the environment does not allow you to store 64-bit integers (signed or unsigned).<br>
+An integer is a palindrome when it reads the same backward as forward. For example, 121 is palindrome while 123 is not.<br>
 
 ------
 
 
 ## Example 1:
 
-Input: x = 123<br>
-Output: 321<br>
+Input: x = 121<br>
+Output: true<br>
 
 ## Example 2:
 
-Input: x = -123<br>
-Output: -321<br>
+Input: x = -121<br>
+Output: false<br>
+Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.<br>
 
 ## Example 3:
 
-Input: x = 120<br>
-Output: 21<br>
+Input: x = 10<br>
+Output: false<br>
+Explanation: Reads 01 from right to left. Therefore it is not a palindrome.<br>
 
 ## Example 4:
 
-Input: x = 0<br>
-Output: 0<br>
-
+Input: x = -101<br>
+Output: false<br>
 
 
 ## 잘못된 풀이(1차)
