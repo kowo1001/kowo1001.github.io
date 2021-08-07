@@ -44,33 +44,25 @@ Output: 0<br>
 
 
 
-## 잘못된 풀이(1차)
-```python
-def solution(array, commands):
-    answer = []
-    temp = []
-    
-    for i in range(3):
-        array[commands[i][0]-1:commands[i][1]].sort()
-        answer[i] = temp[commands[i][2]-1]
-            
-    return answer
-
-```
-### 왜 틀렸는가?(1차)
-- 
-
-### 반성일지(1차)
-- 
-
 ## 정답 풀이
 ```python
+class Solution:
+    def reverse(self, x: int) -> int:
+        if x>0:
+            result = int(str(x)[::-1])
+        else:
+            result = -1*int(str(x*-1)[::-1])
+            
+        if result not in range(-2**31, 2**31):
+            result = 0
+            
+        return result
 
-    
 ```
 
 ## 핵심 알고리즘 및 스킬
-- 
+- str(x)[::-1]의 의미
+- str(x*-1)[::-1]의 의미
 
 ## 다른 사람 풀이
 ```python
