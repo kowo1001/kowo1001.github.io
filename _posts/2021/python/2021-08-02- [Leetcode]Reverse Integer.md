@@ -64,12 +64,15 @@ class Solution:
 - str(x)[::-1]의 의미
 - str(x*-1)[::-1]의 의미
 
-## 다른 사람 풀이
-```python
-
-```
-
 ## 배워야할 점
+- The Slice notation in python has the syntax <br>
+- list[<start>:<stop>:<step>] <br>
 
+Example <br>
+>>> a = '1234' <br>
+>>> a[::-1] <br>
+'4321 <br>
+
+[출처] : https://stackoverflow.com/questions/31633635/what-is-the-meaning-of-inta-1-in-python/31633656
 
     
