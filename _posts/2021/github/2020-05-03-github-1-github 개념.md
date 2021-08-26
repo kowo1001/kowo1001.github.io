@@ -1,5 +1,5 @@
 ---
-title: Spring-(1) Spring 개념과 DI
+title: GitHub 기본 개념 1탄.
 layout: single
 author_profile: true
 read_time: true
