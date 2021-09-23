@@ -79,6 +79,35 @@ getters: {
 ## mutation란?
 - state의 값을 변경할 수 있는 유일한 방법이자 메서드
 - 뮤테이션은 commit()으로 동작시킨다.
+- mutations은 state을 변경시키는 역할을 합니다.
+- mutations에 정의된 함수를 commit를 통해서 호출하는 것으로 저장소의 state에 정의된 변수의 값을 변경할 수 있습니다.
+
+```javascript
+// store.js
+import { createStore } from 'vuex';
+
+const store = createStore({
+    state () {
+        return {
+            count: 0
+        }
+    },
+    mutations: {
+        increment (state) {
+            state.count++
+        }
+    }
+})
+
+export default store;
+
+// StoreAccess.vue
+methods: {
+    increment() {
+        this.$store.commit('increment');
+    }
+}
+```
 
 ```javascript
 //store.js
@@ -113,6 +142,9 @@ this.$store.commit('modifyState', {
     num: 20
 });
 ```
+## actions의 역할
+- 여러 개의 mutations을 실행시킬 수 있습니다.
+- mutations와 달리 비동기 작업이 가능합니다.
 
 
 
