@@ -27,7 +27,7 @@ Auto Close tag : HTML 태그 자동 닫기 플러그인
 Live Server : 정적 파일을 로컬 서버에 올리고 자동 갱신해주는 플러그인
 
 
-코딩 컨밴션 참고 URL
+## 코딩 컨밴션 참고 URL
 https://vuejs.org/v2/style-guide/
 
 vue init webpack-simple vue-news5(프로젝트 폴더명)
@@ -197,6 +197,7 @@ vda 입력 후 tab ??
 github.com/joshua1988/vue-til
 
 1번과 2번은 같은 코드입니다.
+
 ```javascript
 //1
 mutations: {
