@@ -1,0 +1,35 @@
+## 비정형데이터 CCTV 좌표와 영상 온톨로지화 그리고 SPARQL 질의
+
+서울시 실시간 데이터와 물리적 현실 세계의 연결을 다음 4단계로 진행함.
+
+- 1단계: CCTV 좌표 데이터 온톨로지화
+> 도시의 '눈'을 지식 그래프에 통합하기
+- 2단계: GeoSPARQL로 위치 기반 탐색
+> 공간 정보를 활용한 지리적 질의 구현
+- 3단계: CCTV 영상 데이터 분석
+> 비정형 이미지 데이터를 Vision LLM으로 구조화
+- 4단계: 데이터 융합 및 신뢰도 검증
+> 서로 다른 출처의 데이터 융합을 통한 통찰 도출
+
+## 오늘의 목표
+디지털 데이터와 물리적 현실 사이의 간극을 메우고, 서울시의 실시간 상황을
+더 정확하고 신뢰성 있게 파악하는 방법을 시연합니다. 
+
+### TODO - 1
+cctv 좌표를 온톨로지로 변경해서 푸세키 서버에 업로드를 하도록 하겠습니다. 
+
+$ python csv_to_cctv_ttl.py OpenDataCCTV.csv --o cctv.ttl 
+> 작성 완료: cctv.ttl (13247 triples subjects)
+
+$ :sp OpenDataCCTV.csv
+
+### 지식 그래프 확장 과정 
+### 새로운 속성 = 스트림 URL
+
+### SPARQL INSERT DATA 예시
+PREFIX cctv: <http://k.fc/onto/cctv#>
+
+INSERT DATA {
+  cctv:CCTV_1234 cctv:hasStreamUrl <http://cctv.stream.example/1234>.
+}
+
